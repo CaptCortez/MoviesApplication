@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="relative">
+    <div id="wrapper">
+        <header id="page-header" class="relative">
+            <div id="main-menu" class="absolute">
+                <nav id="menu">
+                    <ul class="menu-items">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+                        <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="logo" class="right">
+                <img src="~/Images/misc/mockingbird.png" />
+            </div>
+            <div id="social"></div>
+        </header>
+        <section id="main-content">
+            <div id="main" class="right">
+                @RenderBody()
+            </div>
+        </section>
+        <footer id="page-footer" class="fixed">
+            <span class="copy">&copy; @DateTime.Now.Year - Made by George Sotirov. All rights reserved.</span>
+        </footer>
+    </div>
+</body>
+
+@Scripts.Render("~/bundles/scripts")
+@RenderSection("scripts", required: false)
+</html>
